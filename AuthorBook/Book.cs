@@ -9,25 +9,25 @@ namespace AuthorBook
 {
     internal class Book
     {
-        private string name;
-        private int pageNumber;
-        private int volumes;
-        private Genre genre;
-        private Author author;
-        private DateTime dateOfPublication;
+        private string _name;
+        private int _pageNumber;
+        private int _volumes;
+        private Genre _genre;
+        private Author _author;
+        private DateTime _dateOfPublication;
 
-        public string Name { get => name; set => name = value; }
-        public int PageNumber { get => pageNumber; set => pageNumber = value; }
-        public int Volumes { get => volumes; set => volumes = value; }
-        public DateTime DateOfPublication { get => dateOfPublication; set => dateOfPublication = value; }
-        internal Genre Genre1 { get => genre; set => genre = value; }
+        public string Name { get => _name; set => _name = value; }
+        public int PageNumber { get => _pageNumber; set => _pageNumber = value; }
+        public int Volumes { get => _volumes; set => _volumes = value; }
+        public DateTime DateOfPublication { get => _dateOfPublication; set => _dateOfPublication = value; }
+        internal Genre Genre1 { get => _genre; set => _genre = value; }
         internal Author Author
         {
-            get => author;
+            get => _author;
             set
             {
-                author = value;
-                author.Books.Add(this);
+                _author = value;
+                _author.Books.Add(this);
             }
         }
 

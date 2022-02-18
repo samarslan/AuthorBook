@@ -3,7 +3,7 @@ namespace AuthorBook
     public partial class Form1 : Form
     {
         List<Author> authorList = new List<Author>();
-        List<Book> books=new List<Book>();
+        List<Book> books = new List<Book>();
         public Form1()
         {
             InitializeComponent();
@@ -12,10 +12,10 @@ namespace AuthorBook
         private void Form1_Load(object sender, EventArgs e)
         {
             {
-                authorGenderComboBox.Items.Add(Author.Gender.Male);
-                authorGenderComboBox.Items.Add(Author.Gender.Female);
-                authorGenderComboBox.Items.Add(Author.Gender.Other);
-                authorGenderComboBox.Items.Add(Author.Gender.Unkown);
+                authorGenderComboBox.Items.Add(Author.Sex.Male);
+                authorGenderComboBox.Items.Add(Author.Sex.Female);
+                authorGenderComboBox.Items.Add(Author.Sex.Other);
+                authorGenderComboBox.Items.Add(Author.Sex.Unkown);
                 authorGenderComboBox.SelectedIndex = 3;
 
                 bookGenreComboBox.Items.Add(Book.Genre.Fiction);
@@ -45,7 +45,7 @@ namespace AuthorBook
                             Name = authorNameTextBox.Text,
                             Surname = authorSurnameTextBox.Text,
                             Birthdate = authorBirthDatePicker.Value,
-                            Gender1 = (Author.Gender)authorGenderComboBox.SelectedItem
+                            Gender = (Author.Sex)authorGenderComboBox.SelectedItem
                         };
                         authorList.Add(author);
                     }
