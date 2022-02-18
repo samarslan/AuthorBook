@@ -4,6 +4,7 @@ namespace AuthorBook
     {
         List<Author> authorList = new List<Author>();
         List<Book> books = new List<Book>();
+
         public Form1()
         {
             InitializeComponent();
@@ -32,17 +33,17 @@ namespace AuthorBook
 
         private void authorCreatorButton_Click(object sender, EventArgs e)
         {
-            Author? isThereWriter = authorList.Find(x => x.Name == FirstLetterUpperCase(authorNameTextBox.Text) && x.Surname == authorSurnameTextBox.Text.ToUpper());
-        
-            if(isThereWriter==null)
+            var isThereWriter = authorList.Find(x => x.Name == FirstLetterUpperCase(authorNameTextBox.Text) && x.Surname == authorSurnameTextBox.Text.ToUpper());
+
+            if (isThereWriter == null)
             {
-                if(authorNameTextBox.Text.Length>=1 && authorSurnameTextBox.Text.Length>=1)
+                if (authorNameTextBox.Text.Length >= 1 && authorSurnameTextBox.Text.Length >= 1)
                 {
                     if (authorBirthDatePicker.Value <= DateTime.Now)
                     {
                         Author author = new Author()
                         {
-                            Name = authorNameTextBox.Text,
+                            Name = FirstLetterUpperCase(authorNameTextBox.Text),
                             Surname = authorSurnameTextBox.Text,
                             Birthdate = authorBirthDatePicker.Value,
                             Gender = (Author.Sex)authorGenderComboBox.SelectedItem
@@ -61,21 +62,22 @@ namespace AuthorBook
             }
             else
             {
-                MessageBox.Show("An author with same name already exits."); 
+                MessageBox.Show("An author with same name already exits.");
             }
 
-            authorListBox.DataSource = authorList;
+            authorListBox.DataSource = authorList.ToList();
             authorListBox.DisplayMember = "FullName";
 
-            bookAuthorComboBox.DataSource = authorList;
+            bookAuthorComboBox.DataSource = authorList.ToList();
             bookAuthorComboBox.DisplayMember = "FullName";
+
         }
 
         public string FirstLetterUpperCase(string word)
         {
             word = word.Trim();
             char firstLetter = word.ToCharArray()[0];
-            word=word.Remove(0, 1);
+            word = word.Remove(0, 1);
             word = word.Insert(0, firstLetter.ToString().ToUpper());
             return word;
         }
