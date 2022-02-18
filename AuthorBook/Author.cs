@@ -8,8 +8,8 @@ namespace AuthorBook
 {
     internal class Author
     {
-        private string firstName;
-        private string lastName;
+        private string name;
+        private string surname;
         private DateTime birthdate;
         private int age;
         private Gender gender;
@@ -20,12 +20,12 @@ namespace AuthorBook
             Male, Female, Other, Unkown
         }
 
-        internal string FirstName { get => firstName; set => firstName = value.Trim(); }
-        internal string LastName { get => lastName; set => lastName = value.ToUpper().Trim(); }
+        internal string Name { get => name; set => name = value.Trim(); }
+        internal string Surname { get => surname; set => surname = value.ToUpper().Trim(); }
         internal DateTime Birthdate { get => birthdate; set => birthdate = value; }
-        internal int Age { get => age; set => age = value; }
+        internal int Age { get => Birthdate.Year-DateTime.Now.Year;}
         internal List<Book> Books { get => books; set => books = value; }
         internal  Gender Gender1 { get => gender; set => gender = value; }
-        internal string FullName { get => FirstName + " " + LastName; }
+        internal string FullName { get => Name + " " + Surname; }
     }
 }

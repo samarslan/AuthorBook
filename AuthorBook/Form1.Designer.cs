@@ -39,27 +39,27 @@
             this.authorSurnameTextBox = new System.Windows.Forms.TextBox();
             this.authorNameTextBox = new System.Windows.Forms.TextBox();
             this.bookGroupBox = new System.Windows.Forms.GroupBox();
+            this.bookCreatorButton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.volumeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.pageNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bookDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.bookGenreComboBox = new System.Windows.Forms.ComboBox();
+            this.bookAuthorComboBox = new System.Windows.Forms.ComboBox();
             this.bookNameTextBox = new System.Windows.Forms.TextBox();
             this.authorListBox = new System.Windows.Forms.ListBox();
             this.bookListBox = new System.Windows.Forms.ListBox();
             this.authorButton = new System.Windows.Forms.Button();
             this.bookButton = new System.Windows.Forms.Button();
-            this.bookAuthorComboBox = new System.Windows.Forms.ComboBox();
-            this.bookGenreComboBox = new System.Windows.Forms.ComboBox();
-            this.bookDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pageNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.volumeNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.bookCreatorButton = new System.Windows.Forms.Button();
             this.authorGroupBox.SuspendLayout();
             this.bookGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pageNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.volumeNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // authorGroupBox
@@ -124,6 +124,7 @@
             this.authorCreatorButton.TabIndex = 4;
             this.authorCreatorButton.Text = "Create Author";
             this.authorCreatorButton.UseVisualStyleBackColor = true;
+            this.authorCreatorButton.Click += new System.EventHandler(this.authorCreatorButton_Click);
             // 
             // authorGenderComboBox
             // 
@@ -177,6 +178,108 @@
             this.bookGroupBox.TabStop = false;
             this.bookGroupBox.Text = "Create Book";
             // 
+            // bookCreatorButton
+            // 
+            this.bookCreatorButton.Location = new System.Drawing.Point(164, 236);
+            this.bookCreatorButton.Name = "bookCreatorButton";
+            this.bookCreatorButton.Size = new System.Drawing.Size(100, 50);
+            this.bookCreatorButton.TabIndex = 9;
+            this.bookCreatorButton.Text = "Create Book";
+            this.bookCreatorButton.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(278, 93);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 19);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Volumes:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(278, 46);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(48, 19);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Pages:";
+            // 
+            // volumeNumericUpDown
+            // 
+            this.volumeNumericUpDown.Location = new System.Drawing.Point(346, 90);
+            this.volumeNumericUpDown.Name = "volumeNumericUpDown";
+            this.volumeNumericUpDown.Size = new System.Drawing.Size(74, 26);
+            this.volumeNumericUpDown.TabIndex = 9;
+            // 
+            // pageNumericUpDown
+            // 
+            this.pageNumericUpDown.Location = new System.Drawing.Point(346, 41);
+            this.pageNumericUpDown.Name = "pageNumericUpDown";
+            this.pageNumericUpDown.Size = new System.Drawing.Size(74, 26);
+            this.pageNumericUpDown.TabIndex = 8;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 180);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 19);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Date:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 19);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Genre:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 93);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 19);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Author:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 19);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Name:";
+            // 
+            // bookDatePicker
+            // 
+            this.bookDatePicker.Location = new System.Drawing.Point(63, 176);
+            this.bookDatePicker.Name = "bookDatePicker";
+            this.bookDatePicker.Size = new System.Drawing.Size(189, 26);
+            this.bookDatePicker.TabIndex = 3;
+            // 
+            // bookGenreComboBox
+            // 
+            this.bookGenreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bookGenreComboBox.FormattingEnabled = true;
+            this.bookGenreComboBox.Location = new System.Drawing.Point(63, 131);
+            this.bookGenreComboBox.Name = "bookGenreComboBox";
+            this.bookGenreComboBox.Size = new System.Drawing.Size(189, 27);
+            this.bookGenreComboBox.TabIndex = 2;
+            // 
+            // bookAuthorComboBox
+            // 
+            this.bookAuthorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bookAuthorComboBox.FormattingEnabled = true;
+            this.bookAuthorComboBox.Location = new System.Drawing.Point(63, 90);
+            this.bookAuthorComboBox.Name = "bookAuthorComboBox";
+            this.bookAuthorComboBox.Size = new System.Drawing.Size(189, 27);
+            this.bookAuthorComboBox.TabIndex = 1;
+            // 
             // bookNameTextBox
             // 
             this.bookNameTextBox.Location = new System.Drawing.Point(63, 41);
@@ -220,108 +323,6 @@
             this.bookButton.Text = "About Selected Book";
             this.bookButton.UseVisualStyleBackColor = true;
             // 
-            // bookAuthorComboBox
-            // 
-            this.bookAuthorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bookAuthorComboBox.FormattingEnabled = true;
-            this.bookAuthorComboBox.Location = new System.Drawing.Point(63, 90);
-            this.bookAuthorComboBox.Name = "bookAuthorComboBox";
-            this.bookAuthorComboBox.Size = new System.Drawing.Size(189, 27);
-            this.bookAuthorComboBox.TabIndex = 1;
-            // 
-            // bookGenreComboBox
-            // 
-            this.bookGenreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bookGenreComboBox.FormattingEnabled = true;
-            this.bookGenreComboBox.Location = new System.Drawing.Point(63, 131);
-            this.bookGenreComboBox.Name = "bookGenreComboBox";
-            this.bookGenreComboBox.Size = new System.Drawing.Size(189, 27);
-            this.bookGenreComboBox.TabIndex = 2;
-            // 
-            // bookDatePicker
-            // 
-            this.bookDatePicker.Location = new System.Drawing.Point(63, 176);
-            this.bookDatePicker.Name = "bookDatePicker";
-            this.bookDatePicker.Size = new System.Drawing.Size(189, 26);
-            this.bookDatePicker.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Name:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 93);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 19);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Author:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 135);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 19);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Genre:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 180);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 19);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Date:";
-            // 
-            // pageNumericUpDown
-            // 
-            this.pageNumericUpDown.Location = new System.Drawing.Point(346, 41);
-            this.pageNumericUpDown.Name = "pageNumericUpDown";
-            this.pageNumericUpDown.Size = new System.Drawing.Size(74, 26);
-            this.pageNumericUpDown.TabIndex = 8;
-            // 
-            // volumeNumericUpDown
-            // 
-            this.volumeNumericUpDown.Location = new System.Drawing.Point(346, 90);
-            this.volumeNumericUpDown.Name = "volumeNumericUpDown";
-            this.volumeNumericUpDown.Size = new System.Drawing.Size(74, 26);
-            this.volumeNumericUpDown.TabIndex = 9;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(278, 46);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 19);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Pages:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(278, 93);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 19);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Volumes:";
-            // 
-            // bookCreatorButton
-            // 
-            this.bookCreatorButton.Location = new System.Drawing.Point(164, 236);
-            this.bookCreatorButton.Name = "bookCreatorButton";
-            this.bookCreatorButton.Size = new System.Drawing.Size(100, 50);
-            this.bookCreatorButton.TabIndex = 9;
-            this.bookCreatorButton.Text = "Create Book";
-            this.bookCreatorButton.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -335,12 +336,13 @@
             this.Controls.Add(this.authorGroupBox);
             this.Name = "Form1";
             this.Text = "Author Book";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.authorGroupBox.ResumeLayout(false);
             this.authorGroupBox.PerformLayout();
             this.bookGroupBox.ResumeLayout(false);
             this.bookGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pageNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.volumeNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pageNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
