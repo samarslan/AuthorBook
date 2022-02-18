@@ -5,7 +5,6 @@
         private string _name;
         private string _surname;
         private DateTime _birthdate;
-        private readonly int _age;
         private Sex _gender;
         private List<Book> _books;
 
