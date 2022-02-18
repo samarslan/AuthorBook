@@ -2,8 +2,8 @@ namespace AuthorBook
 {
     public partial class Form1 : Form
     {
-        List<Author> authorList;
-        List<Book> books;
+        List<Author> authorList = new List<Author>();
+        List<Book> books=new List<Book>();
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace AuthorBook
 
         private void authorCreatorButton_Click(object sender, EventArgs e)
         {
-            Author isThereWriter = authorList.Find(x => x.Name == FirstLetterUpperCase(authorNameTextBox.Text) && x.Surname == authorSurnameTextBox.Text.ToUpper());
+            Author? isThereWriter = authorList.Find(x => x.Name == FirstLetterUpperCase(authorNameTextBox.Text) && x.Surname == authorSurnameTextBox.Text.ToUpper());
         
             if(isThereWriter==null)
             {
