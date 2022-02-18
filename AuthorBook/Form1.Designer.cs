@@ -222,6 +222,7 @@
             // 
             // bookAuthorComboBox
             // 
+            this.bookAuthorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bookAuthorComboBox.FormattingEnabled = true;
             this.bookAuthorComboBox.Location = new System.Drawing.Point(63, 90);
             this.bookAuthorComboBox.Name = "bookAuthorComboBox";
@@ -230,6 +231,7 @@
             // 
             // bookGenreComboBox
             // 
+            this.bookGenreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bookGenreComboBox.FormattingEnabled = true;
             this.bookGenreComboBox.Location = new System.Drawing.Point(63, 131);
             this.bookGenreComboBox.Name = "bookGenreComboBox";
