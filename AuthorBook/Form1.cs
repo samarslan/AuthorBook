@@ -18,8 +18,7 @@ namespace AuthorBook
 
                 bookGenreComboBox.DisplayMember = "Value";
                 bookGenreComboBox.ValueMember = "Key";
-                bookGenreComboBox.DataSource = Enum.GetValues(typeof(Book.Genre));
-                //bookGenreComboBox.DataSource = EnumList.Of<Book.Genre>();
+                bookGenreComboBox.DataSource = EnumList.Of<Book.Genre>();
             }
         }
 
@@ -95,7 +94,7 @@ namespace AuthorBook
                                         {
                                             Name = bookNameTextBox.Text,
                                             Author = (Author)bookAuthorComboBox.SelectedItem,
-                                            Genre1 = (Book.Genre)bookGenreComboBox.SelectedItem,
+                                            Genre1 = (Book.Genre)bookGenreComboBox.SelectedValue,
                                             PageNumber = (int)pageNumericUpDown.Value,
                                             Volumes = (int)volumeNumericUpDown.Value,
                                             DateOfPublication = bookDatePicker.Value
