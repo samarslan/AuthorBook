@@ -13,21 +13,12 @@ namespace AuthorBook
         private void Form1_Load(object sender, EventArgs e)
         {
             {
-                authorGenderComboBox.Items.Add(Author.Sex.Male);
-                authorGenderComboBox.Items.Add(Author.Sex.Female);
-                authorGenderComboBox.Items.Add(Author.Sex.Other);
-                authorGenderComboBox.Items.Add(Author.Sex.Unkown);
+                authorGenderComboBox.DataSource = Enum.GetValues(typeof(Author.Sex));
                 authorGenderComboBox.SelectedIndex = 3;
 
-                bookGenreComboBox.Items.Add(Book.Genre.Fiction);
-                bookGenreComboBox.Items.Add(Book.Genre.Fantasy);
-                bookGenreComboBox.Items.Add(Book.Genre.Mystery);
-                bookGenreComboBox.Items.Add(Book.Genre.Thriller);
-                bookGenreComboBox.Items.Add(Book.Genre.Horror);
-                bookGenreComboBox.Items.Add(Book.Genre.Historical);
-                bookGenreComboBox.Items.Add(Book.Genre.Romance);
-                bookGenreComboBox.Items.Add(Book.Genre.ScienceFiction);
-                bookGenreComboBox.Items.Add(Book.Genre.RealistLiterature);
+                bookGenreComboBox.DisplayMember = "Value";
+                bookGenreComboBox.ValueMember = "Key";
+                bookGenreComboBox.DataSource = EnumList.Of<Book.Genre>();
             }
         }
 
