@@ -61,7 +61,6 @@ namespace AuthorBook
 
             bookAuthorComboBox.DataSource = authorList.ToList();
             bookAuthorComboBox.DisplayMember = "FullName";
-
         }
 
         public string FirstLetterUpperCase(string word)
@@ -71,6 +70,74 @@ namespace AuthorBook
             word = word.Remove(0, 1);
             word = word.Insert(0, firstLetter.ToString().ToUpper());
             return word;
+        }
+
+        private void bookCreatorButton_Click(object sender, EventArgs e)
+        {
+            var isThereBook = books.Find(x => x.Name == bookNameTextBox.Text);
+
+            if (isThereBook == null)
+            {
+                if (bookNameTextBox.Text.Length >= 1)
+                {
+                    if (pageNumericUpDown.Value > 0)
+                    {
+                        if (volumeNumericUpDown.Value > 0)
+                        {
+                            if (bookAuthorComboBox != null)
+                            {
+                                if (bookGenreComboBox != null)
+                                {
+                                    if (bookDatePicker.Value <= DateTime.Now)
+                                    {
+                                        Book book = new Book()
+                                        {
+                                            Name = bookNameTextBox.Text,
+                                            Author = (Author)bookAuthorComboBox.SelectedItem,
+                                            Genre1 = (Book.Genre)bookGenreComboBox.SelectedItem,
+                                            PageNumber = (int)pageNumericUpDown.Value,
+                                            Volumes = (int)volumeNumericUpDown.Value,
+                                            DateOfPublication = bookDatePicker.Value
+                                        };
+                                        books.Add(book);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Please enter a valid publish date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Please choose a genre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please choose an author.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid volume number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid page number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid book name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("A book with same name already exits.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            bookListBox.DataSource = books;
+            bookListBox.DisplayMember = "Name";
         }
     }
 }

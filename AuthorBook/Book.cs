@@ -22,7 +22,7 @@ namespace AuthorBook
             set
             {
                 _author = value;
-                _author.Books.Add(this);
+                _author.Books = this;
             }
         }
 

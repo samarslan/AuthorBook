@@ -186,6 +186,7 @@
             this.bookCreatorButton.TabIndex = 9;
             this.bookCreatorButton.Text = "Create Book";
             this.bookCreatorButton.UseVisualStyleBackColor = true;
+            this.bookCreatorButton.Click += new System.EventHandler(this.bookCreatorButton_Click);
             // 
             // label10
             // 

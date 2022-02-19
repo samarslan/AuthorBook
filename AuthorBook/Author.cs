@@ -6,7 +6,7 @@
         private string _surname;
         private DateTime _birthdate;
         private Sex _gender;
-        private List<Book> _books;
+        private Book? _books;
 
         internal enum Sex
         {
@@ -17,7 +17,7 @@
         internal string Surname { get => _surname; set => _surname = value.ToUpper().Trim(); }
         internal DateTime Birthdate { get => _birthdate; set => _birthdate = value; }
         public int Age { get => Birthdate.Year - DateTime.Now.Year; }
-        internal List<Book> Books { get => _books; set => _books = value; }
+        internal Book? Books { get => _books; set => _books = value; }
         internal Sex Gender { get => _gender; set => _gender = value; }
         public string FullName 
         {
