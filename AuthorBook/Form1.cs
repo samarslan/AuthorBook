@@ -18,7 +18,8 @@ namespace AuthorBook
 
                 bookGenreComboBox.DisplayMember = "Value";
                 bookGenreComboBox.ValueMember = "Key";
-                bookGenreComboBox.DataSource = EnumList.Of<Book.Genre>();
+                bookGenreComboBox.DataSource = Enum.GetValues(typeof(Book.Genre));
+                //bookGenreComboBox.DataSource = EnumList.Of<Book.Genre>();
             }
         }
 
@@ -136,7 +137,7 @@ namespace AuthorBook
                 MessageBox.Show("A book with same name already exits.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            bookListBox.DataSource = books;
+            bookListBox.DataSource = books.ToList();
             bookListBox.DisplayMember = "Name";
         }
     }
