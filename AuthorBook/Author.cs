@@ -19,12 +19,6 @@
         public int Age { get => Birthdate.Year - DateTime.Now.Year; }
         internal Book? Books { get => _books; set => _books = value; }
         internal Sex Gender { get => _gender; set => _gender = value; }
-        public string FullName 
-        {
-            get
-            {
-                return _name + " " + _surname;
-            }
-        }
+        public string FullName => _name + " " + _surname;
     }
 }
