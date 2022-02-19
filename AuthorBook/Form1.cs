@@ -43,17 +43,17 @@ namespace AuthorBook
                     }
                     else
                     {
-                        MessageBox.Show("Please enter a valid birthday.");
+                        MessageBox.Show("Please enter a valid birthday.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a valid name and surname.");
+                    MessageBox.Show("Please enter a valid name and surname.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("An author with same name already exits.");
+                MessageBox.Show("An author with same name already exits.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             authorListBox.DataSource = authorList.ToList();
