@@ -80,50 +80,36 @@ namespace AuthorBook
             {
                 if (bookNameTextBox.Text.Length >= 1)
                 {
-                    if (pageNumericUpDown.Value > 0)
+                    if (bookAuthorComboBox != null)
                     {
-                        if (volumeNumericUpDown.Value > 0)
+                        if (bookGenreComboBox != null)
                         {
-                            if (bookAuthorComboBox != null)
+                            if (bookDatePicker.Value <= DateTime.Now)
                             {
-                                if (bookGenreComboBox != null)
+                                Book book = new Book()
                                 {
-                                    if (bookDatePicker.Value <= DateTime.Now)
-                                    {
-                                        Book book = new Book()
-                                        {
-                                            Name = bookNameTextBox.Text,
-                                            Author = (Author)bookAuthorComboBox.SelectedItem,
-                                            Genre1 = (Book.Genre)bookGenreComboBox.SelectedValue,
-                                            PageNumber = (int)pageNumericUpDown.Value,
-                                            Volumes = (int)volumeNumericUpDown.Value,
-                                            DateOfPublication = bookDatePicker.Value
-                                        };
-                                        books.Add(book);
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Please enter a valid publish date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Please choose a genre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
+                                    Name = bookNameTextBox.Text,
+                                    Author = (Author)bookAuthorComboBox.SelectedItem,
+                                    Genre1 = (Book.Genre)bookGenreComboBox.SelectedValue,
+                                    PageNumber = (int)pageNumericUpDown.Value,
+                                    Volumes = (int)volumeNumericUpDown.Value,
+                                    DateOfPublication = bookDatePicker.Value
+                                };
+                                books.Add(book);
                             }
                             else
                             {
-                                MessageBox.Show("Please choose an author.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Please enter a valid publish date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Please enter a valid volume number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Please choose a genre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please enter a valid page number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please choose an author.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else

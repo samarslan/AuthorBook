@@ -43,7 +43,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.volumeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.volumeNumericUpDown.Maximum = int.MaxValue;
             this.pageNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.pageNumericUpDown.Maximum = int.MaxValue;
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -212,13 +214,28 @@
             this.volumeNumericUpDown.Name = "volumeNumericUpDown";
             this.volumeNumericUpDown.Size = new System.Drawing.Size(74, 26);
             this.volumeNumericUpDown.TabIndex = 9;
+            this.volumeNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // pageNumericUpDown
             // 
             this.pageNumericUpDown.Location = new System.Drawing.Point(346, 41);
+            this.pageNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.pageNumericUpDown.Name = "pageNumericUpDown";
             this.pageNumericUpDown.Size = new System.Drawing.Size(74, 26);
             this.pageNumericUpDown.TabIndex = 8;
+            this.pageNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label8
             // 
