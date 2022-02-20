@@ -125,29 +125,5 @@ namespace AuthorBook
             bookListBox.DataSource = books.ToList();
             bookListBox.DisplayMember = "Name";
         }
-
-        private void authorButton_Click(object sender, EventArgs e)
-        {
-            Author author = (Author) authorListBox.SelectedItem;
-
-            string? authorsBooks = null;
-            foreach (Book x in books)
-            {
-                if (x.Author==author)
-                {
-                    authorsBooks += x.Name + ",";
-                }
-            }
-            int bookCount=authorsBooks.Split(',').Length;
-
-            if (bookCount>2)
-            {
-                MessageBox.Show(author.FullName + " has books named " + authorsBooks.TrimEnd(' ', ','));
-            }
-            else
-            {
-                MessageBox.Show(author.FullName + " has a book named " + authorsBooks.TrimEnd(' ', ','));
-            }
-        }
     }
 }
