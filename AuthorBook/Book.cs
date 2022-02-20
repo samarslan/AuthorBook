@@ -31,6 +31,19 @@ namespace AuthorBook
             Fiction, Fantasy, Mystery, Thriller, Horror, Historical, Romance,
             [Description("Science Fiction")] ScienceFiction, [Description("Realist Literature")] RealistLiterature
         }
+
+        public static IEnumerable<KeyValuePair<Book.Genre, string>> GetGenrePairs()
+        {
+            return Enum.GetValues(typeof(Book.Genre))
+                .Cast<Book.Genre>()
+                .Select(p => new KeyValuePair<Book.Genre, string>(
+                    p,
+                    (p.GetType().GetField(p.ToString())
+                        .GetCustomAttributes(typeof(DescriptionAttribute), false)
+                        .FirstOrDefault() as DescriptionAttribute)?.Description ?? p.ToString()
+                ))
+                .ToList();
+        }
     }
 
 }

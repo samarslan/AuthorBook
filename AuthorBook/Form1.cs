@@ -4,7 +4,6 @@ namespace AuthorBook
     {
         List<Author> authorList = new List<Author>();
         List<Book> books = new List<Book>();
-
         public Form1()
         {
             InitializeComponent();
@@ -15,9 +14,9 @@ namespace AuthorBook
             authorGenderComboBox.DataSource = Enum.GetValues(typeof(Author.Sex));
             authorGenderComboBox.SelectedIndex = 3;
 
+            bookGenreComboBox.DataSource = Book.GetGenrePairs();
             bookGenreComboBox.DisplayMember = "Value";
             bookGenreComboBox.ValueMember = "Key";
-            bookGenreComboBox.DataSource = EnumList.Of<Book.Genre>();
         }
 
         private void authorCreatorButton_Click(object sender, EventArgs e)
@@ -161,7 +160,7 @@ namespace AuthorBook
         private void bookButton_Click(object sender, EventArgs e)
         {
             Book b = (Book)bookListBox.SelectedItem;
-            MessageBox.Show("About "+b.Name+" named book:\nAuthor: "+b.Author.FullName+"\n"+b.PageNumber+" Pages\nGenre: "+b.Genre1+"\nDate of Publish: "+ b.DateOfPublication.ToShortDateString());
+            MessageBox.Show("About "+b.Name+" named book:\nAuthor: "+b.Author.FullName+"\n"+b.PageNumber+" Pages\nGenre: "+Book.GetGenrePairs().ElementAt((int) b.Genre1).Value+"\nDate of Publish: "+ b.DateOfPublication.ToShortDateString());
         }
     }
 }
