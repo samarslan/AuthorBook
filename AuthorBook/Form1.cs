@@ -12,14 +12,12 @@ namespace AuthorBook
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            {
-                authorGenderComboBox.DataSource = Enum.GetValues(typeof(Author.Sex));
-                authorGenderComboBox.SelectedIndex = 3;
+            authorGenderComboBox.DataSource = Enum.GetValues(typeof(Author.Sex));
+            authorGenderComboBox.SelectedIndex = 3;
 
-                bookGenreComboBox.DisplayMember = "Value";
-                bookGenreComboBox.ValueMember = "Key";
-                bookGenreComboBox.DataSource = EnumList.Of<Book.Genre>();
-            }
+            bookGenreComboBox.DisplayMember = "Value";
+            bookGenreComboBox.ValueMember = "Key";
+            bookGenreComboBox.DataSource = EnumList.Of<Book.Genre>();
         }
 
         private void authorCreatorButton_Click(object sender, EventArgs e)
