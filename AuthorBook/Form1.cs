@@ -129,6 +129,7 @@ namespace AuthorBook
         private void authorButton_Click(object sender, EventArgs e)
         {
             Author author = (Author)authorListBox.SelectedItem;
+            bool? doesAuthorHasBook = null;
 
             string? authorsBooks = null;
             foreach (Book x in books)
@@ -137,10 +138,19 @@ namespace AuthorBook
                 {
                     authorsBooks += x.Name + ",";
                 }
+                else
+                {
+                    doesAuthorHasBook = false;
+                }
             }
             int bookCount = authorsBooks.Split(',').Length;
 
-            if (bookCount > 2)
+
+            if (doesAuthorHasBook==false)
+            {
+                MessageBox.Show(author.FullName + " doesn't have any books");
+            }
+            else if (bookCount > 2)
             {
                 MessageBox.Show(author.FullName + " has books named " + authorsBooks.TrimEnd(' ', ','));
             }
@@ -148,6 +158,12 @@ namespace AuthorBook
             {
                 MessageBox.Show(author.FullName + " has a book named " + authorsBooks.TrimEnd(' ', ','));
             }
+        }
+
+        private void bookButton_Click(object sender, EventArgs e)
+        {
+            Book b = (Book)bookListBox.SelectedItem;
+            MessageBox.Show("About "+b.Name+" named book:\nAuthor: "+b.Author.FullName+"\n"+b.PageNumber+" Pages\nGenre: "+b.Genre1+"\nDate of Publish: "+ b.DateOfPublication.ToShortDateString());
         }
     }
 }

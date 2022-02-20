@@ -211,6 +211,11 @@
             // volumeNumericUpDown
             // 
             this.volumeNumericUpDown.Location = new System.Drawing.Point(346, 90);
+            this.volumeNumericUpDown.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
             this.volumeNumericUpDown.Name = "volumeNumericUpDown";
             this.volumeNumericUpDown.Size = new System.Drawing.Size(74, 26);
             this.volumeNumericUpDown.TabIndex = 9;
@@ -223,6 +228,11 @@
             // pageNumericUpDown
             // 
             this.pageNumericUpDown.Location = new System.Drawing.Point(346, 41);
+            this.pageNumericUpDown.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
             this.pageNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -331,6 +341,7 @@
             this.authorButton.TabIndex = 4;
             this.authorButton.Text = "About Selected Author";
             this.authorButton.UseVisualStyleBackColor = true;
+            this.authorButton.Click += new System.EventHandler(this.authorButton_Click);
             // 
             // bookButton
             // 
@@ -340,6 +351,7 @@
             this.bookButton.TabIndex = 5;
             this.bookButton.Text = "About Selected Book";
             this.bookButton.UseVisualStyleBackColor = true;
+            this.bookButton.Click += new System.EventHandler(this.bookButton_Click);
             // 
             // Form1
             // 
