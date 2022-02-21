@@ -21,7 +21,7 @@ namespace AuthorBook
 
         private void authorCreatorButton_Click(object sender, EventArgs e)
         {
-            var isThereWriter = authorList.Find(x => x.Name == FirstLetterUpperCase(authorNameTextBox.Text) && x.Surname == authorSurnameTextBox.Text.ToUpper());
+            var isThereWriter = authorList.Find(x => x.Name == StringExtension.FirstLetterUpperCase(authorNameTextBox.Text) && x.Surname == authorSurnameTextBox.Text.ToUpper());
 
             if (isThereWriter == null)
             {
@@ -31,7 +31,7 @@ namespace AuthorBook
                     {
                         Author author = new Author()
                         {
-                            Name = FirstLetterUpperCase(authorNameTextBox.Text),
+                            Name = authorNameTextBox.Text,
                             Surname = authorSurnameTextBox.Text,
                             Birthdate = authorBirthDatePicker.Value,
                             Gender = (Author.Sex)authorGenderComboBox.SelectedItem
@@ -58,15 +58,6 @@ namespace AuthorBook
 
             bookAuthorComboBox.DataSource = authorList.ToList();
             bookAuthorComboBox.DisplayMember = "FullName";
-        }
-
-        public string FirstLetterUpperCase(string word)
-        {
-            word = word.Trim();
-            char firstLetter = word.ToCharArray()[0];
-            word = word.Remove(0, 1);
-            word = word.Insert(0, firstLetter.ToString().ToUpper());
-            return word;
         }
 
         private void bookCreatorButton_Click(object sender, EventArgs e)

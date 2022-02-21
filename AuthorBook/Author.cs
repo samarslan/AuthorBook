@@ -13,7 +13,7 @@
             Male, Female, Other, Unkown
         }
 
-        internal string Name { get => _name; set => _name = value.Trim(); }
+        internal string Name { get => _name; set => _name = StringExtension.FirstLetterUpperCase(value); }
         internal string Surname { get => _surname; set => _surname = value.ToUpper().Trim(); }
         internal DateTime Birthdate { get => _birthdate; set => _birthdate = value; }
         public int Age { get => Birthdate.Year - DateTime.Now.Year; }
